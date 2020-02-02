@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 使用@MapperScan 指定接口所在的包
  */
 @SpringBootApplication
-@SuppressWarnings("all")
 @MapperScan("com.mohen.crm.dao")
 public class Starter {
 
