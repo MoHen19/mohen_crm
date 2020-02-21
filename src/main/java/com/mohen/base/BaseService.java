@@ -1,9 +1,15 @@
 package com.mohen.base;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import java.util.List;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@SuppressWarnings("all")
 public abstract class BaseService<T,ID> {
 
     @Autowired
@@ -42,7 +48,6 @@ public abstract class BaseService<T,ID> {
         return baseMapper.insertBatch(entities);
     }
 
-
     /**
      * 根据id 查询详情
      * @param id
@@ -51,7 +56,6 @@ public abstract class BaseService<T,ID> {
     public T selectByPrimaryKey(ID id) throws DataAccessException{
         return baseMapper.selectByPrimaryKey(id);
     }
-
 
     /**
      * 多条件查询
@@ -62,7 +66,6 @@ public abstract class BaseService<T,ID> {
         return baseMapper.selectByParams(baseQuery);
     }
 
-
     /**
      * 更新单条记录
      * @param entity
@@ -71,7 +74,6 @@ public abstract class BaseService<T,ID> {
     public Integer updateByPrimaryKeySelective(T entity) throws DataAccessException{
         return baseMapper.updateByPrimaryKeySelective(entity);
     }
-
 
     /**
      * 批量更新
@@ -99,4 +101,19 @@ public abstract class BaseService<T,ID> {
     public Integer deleteBatch(ID[] ids) throws DataAccessException{
         return baseMapper.deleteBatch(ids);
     }
+
+    /**
+     * 多条件查询
+     * @param baseQuery
+     * @return
+     */
+    public Map<String, Object> queryByParamsForDataGrid(BaseQuery baseQuery) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        PageHelper.startPage(baseQuery.getPage(), baseQuery.getRows());
+        PageInfo<T> pageInfo = new PageInfo<T>(selectByParams(baseQuery));
+        result.put("total", pageInfo.getTotal());
+        result.put("rows", pageInfo.getList());
+        return result;
+    }
+
 }

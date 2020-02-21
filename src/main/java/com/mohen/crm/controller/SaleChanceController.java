@@ -1,6 +1,7 @@
 package com.mohen.crm.controller;
 
 import com.mohen.base.BaseController;
+import com.mohen.crm.annotaions.RequirePermission;
 import com.mohen.crm.model.ResultInfo;
 import com.mohen.crm.query.SaleChanceQuery;
 import com.mohen.crm.service.SaleChanceService;
@@ -35,12 +36,14 @@ public class SaleChanceController extends BaseController {
 
     @RequestMapping("list")
     @ResponseBody
+    @RequirePermission(code = "101001")
     public Map<String,Object> querySaleChancesByParams(SaleChanceQuery saleChanceQuery){
         return saleChanceService.querySaleChancesByParams(saleChanceQuery);
     }
 
     @RequestMapping("save")
     @ResponseBody
+    @RequirePermission(code = "101002")
     public ResultInfo saveSaleChance(HttpServletRequest request,SaleChance saleChance){
         saleChance.setCreateMan(userService.selectByPrimaryKey(LoginUserUtil.releaseUserIdFromCookie(request)).getTrueName());
         saleChanceService.saveSaleChance(saleChance);
@@ -49,6 +52,7 @@ public class SaleChanceController extends BaseController {
 
     @RequestMapping("update")
     @ResponseBody
+    @RequirePermission(code = "101004")
     public ResultInfo updateSaleChance(SaleChance saleChance){
         saleChanceService.updateSaleChance(saleChance);
         return success("机会数据更新成功");
@@ -56,6 +60,7 @@ public class SaleChanceController extends BaseController {
 
     @RequestMapping("delete")
     @ResponseBody
+    @RequirePermission(code = "101003")
     public ResultInfo deleteSaleChance(Integer[] ids){
         saleChanceService.deleteBatch(ids);
         return success("机会数据删除成功");

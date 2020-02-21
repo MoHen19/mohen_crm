@@ -47,6 +47,7 @@ function modifyPassword() {
                     window.location.href=ctx+"/index";
                 },5000)
             }else{
+
                 $.messager.alert("来自crm",data.msg,"error");
             }
         }

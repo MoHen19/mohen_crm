@@ -162,9 +162,9 @@
       <if test="assignMan != null" >
         assign_man = #{assignMan,jdbcType=VARCHAR},
       </if>
-      <if test="assignTime != null" >
+
         assign_time = #{assignTime,jdbcType=TIMESTAMP},
-      </if>
+
       <if test="state != null" >
         state = #{state,jdbcType=INTEGER},
       </if>

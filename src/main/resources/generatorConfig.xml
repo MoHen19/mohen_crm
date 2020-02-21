@@ -47,10 +47,9 @@
             tableName:需要被生成的表名
             domainObjectName:生成的文件名
          -->
-        <table tableName="t_sale_chance" domainObjectName="SaleChance"
+        <table tableName="t_customer" domainObjectName="Customer"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>
-
     </context>
 </generatorConfiguration>
