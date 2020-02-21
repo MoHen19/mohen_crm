@@ -1,4 +1,4 @@
-package com.mohen.proxy;
+package com.mohen.crm.proxy;
 
 import com.mohen.crm.annotaions.RequirePermission;
 import com.mohen.crm.exceptions.AuthFailedException;
