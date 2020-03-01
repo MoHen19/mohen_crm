@@ -5,16 +5,16 @@ import com.mohen.base.BaseQuery;
 @SuppressWarnings("all")
 public class ModuleQuery extends BaseQuery {
 
-    //菜单层级 0_一级菜单 1-二级菜单 2-三级菜单
+    // 菜单层级  0-一级菜单  1-二级菜单 2-三级菜单
     private Integer grade;
 
-    //菜单名称
+    // 菜单名称
     private String moduleName;
 
-    //权限码
+    // 权限码
     private String code;
 
-    //上级菜单的id
+    // 上级菜单id
     private Integer pId;
 
     public Integer getGrade() {

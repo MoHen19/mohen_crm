@@ -1,7 +1,6 @@
 package com.mohen.crm.controller;
 
 import com.mohen.base.BaseController;
-import com.mohen.crm.exceptions.ParamsException;
 import com.mohen.crm.model.ResultInfo;
 import com.mohen.crm.model.UserModel;
 import com.mohen.crm.query.UserQuery;

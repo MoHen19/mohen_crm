@@ -47,7 +47,7 @@
             tableName:需要被生成的表名
             domainObjectName:生成的文件名
          -->
-        <table tableName="t_customer" domainObjectName="Customer"
+        <table tableName="t_customer_reprieve" domainObjectName="CustomerRep"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"></table>

@@ -8,6 +8,7 @@ function formatterOp(value,rowData) {
     }
 }
 
+
 // window.parent.openTab("客户开发计划","https://www.baidu.com");
 function openCusDevPlanDialog() {
     var recode =$("#dg").datagrid("getSelections")[0];
@@ -33,12 +34,15 @@ function openCusDevPlanDialog() {
         });
     }
     $("#dlg").dialog("open").dialog("setTitle","开发计划项展示");
+
 }
+
 
 function saveCusDevPlan() {
     $("#dg02").edatagrid("saveRow");
     $("#dg02").edatagrid("load");
 }
+
 
 function delCusDevPlan() {
     var rows=$("#dg02").datagrid("getSelections");
@@ -46,10 +50,12 @@ function delCusDevPlan() {
         $.messager.alert("来自crm","请选择待删除的计划项数据!","error");
         return;
     }
+
     if(rows.length>1){
         $.messager.alert("来自crm","暂不支持批量删除操作!","error");
         return;
     }
+
     $.messager.confirm("来自crm","确定删除选中的记录?",function (r) {
         if(r){
             $.ajax({
@@ -65,9 +71,11 @@ function delCusDevPlan() {
                     }
                 }
             })
+
         }
     })
 }
+
 
 function updateSaleChanceDevResult(status) {
     $.ajax({

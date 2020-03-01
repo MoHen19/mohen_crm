@@ -1,5 +1,7 @@
 package com.mohen.crm.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Customer {
@@ -49,8 +51,10 @@ public class Customer {
 
     private Integer isValid;
 
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GTM+8")
     private Date createDate;
 
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GTM+8")
     private Date updateDate;
 
     public Integer getId() {

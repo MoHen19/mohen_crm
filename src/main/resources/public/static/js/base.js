@@ -7,9 +7,11 @@ function openDialog(dlgId,title) {
     $("#"+dlgId).dialog("open").dialog("setTitle",title);
 }
 
+
 function closeDialog(dlgId) {
     $("#"+dlgId).dialog("close");
 }
+
 
 /**
  * 添加与更新记录
@@ -42,6 +44,7 @@ function saveOrUpdateRecode(saveUrl,updateUrl,dlgId,search,clearData) {
     })
 }
 
+
 /**
  *
  * @param dataGridId  表格id
@@ -63,6 +66,7 @@ function openModifyDialog(dataGridId,formId,dlgId,title) {
     $("#"+formId).form("load",rows[0]);
     openDialog(dlgId,title);
 }
+
 
 /**
  *

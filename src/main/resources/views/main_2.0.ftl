@@ -45,14 +45,13 @@
                data-options="plain:true,iconCls:'icon-exit'"
                style="width: 150px;">安全退出</a>
         </div>
-
     </div>
-</div>
 
+</div>
 <div region="south" style="height:55px;background-color: #E0ECFF" align="center">
     版本所有 上海尚学堂 <a href="http://www.shsxt.com" target="_blank">www.shsxt.com</a>(2016-2026)<br/>
-    上海尚学堂地址：上海市浦东新区城丰路650号海立大厦2层 咨询电话：021-67690939<br/>
-    上海尚学堂智能科技有限公司的icp备案号 （沪ICP备16053543号）
+    上海尚学堂地址：上海市松江区荣乐东路2369弄45号绿地伯顿大厦2层 咨询电话：021-67690939<br/>
+    上海尚学堂智能科技有限公司 的icp备案号 （沪ICP备16053543号）
 </div>
 
 
